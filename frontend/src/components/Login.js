@@ -35,12 +35,12 @@ const Login = () => {
                     withCredentials:true
                 });
                 if(res.data.success){
-                    toast.success(res.data.message);
+                    toast.success(res.data?.message);
                 }
                 dispatch(setUser(res.data.user));
                 navigate("/browse");
             } catch (error) {
-                toast.error(error.response.data.message);
+                toast.error(error.response?.data?.message);
                 console.log(error);
             } finally {
                 dispatch(setLoading(false));
@@ -57,11 +57,11 @@ const Login = () => {
                     withCredentials:true
                 });
                 if(res.data.success){
-                    toast.success(res.data.message);
+                    toast.success(res.data?.message);
                 }
                 setIsLogin(true);
             } catch (error) {
-                toast.error(error.response.data.message);
+                toast.error(error.response?.data?.message);
                 console.log(error);
             } finally{
                 dispatch(setLoading(false));
